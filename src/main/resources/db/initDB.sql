@@ -1,0 +1,19 @@
+CREATE TABLE Account (
+    Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Status VARCHAR(25) NOT NULL
+);
+
+CREATE TABLE Skill(
+    Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(25)
+);
+
+CREATE TABLE Developer(
+    Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(25) NOT NULL ,
+    LastName VARCHAR(25) NOT NULL ,
+    Account_id INT,
+    Skill_id INT NOT NULL,
+    FOREIGN KEY (Account_id) REFERENCES account(Id),
+    FOREIGN KEY (Skill_id) REFERENCES Skill(Id)
+);

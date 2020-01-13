@@ -1,0 +1,13 @@
+                                                TASK 1
+SELECT Person.FirstName,Person.LastName,Address.City,Address.State
+FROM Person LEFT JOIN  Address ON Person.PersonId = Address.PersonId;
+                                                TASK 2
+SELECT max(employee.Salary) FROM employee WHERE Salary NOT IN (SELECT max(Salary) FROM employee)
+                                                TASK 3
+SELECT employee.Name FROM employee WHERE ManagerId = 0 AND (SELECT max(Salary) FROM employee)
+                                                TASK 4
+SELECT Person.Email FROM Person GROUP BY Email HAVING COUNT(*)>1
+                                                TASK 5
+SELECT Customers.Name FROM Customers WHERE  Customers.Id NOT IN (SELECT Orders.CustomerId FROM Orders);
+                                                TASK 6
+SELECT courses.class FROM courses GROUP BY  class HAVING COUNT(*)>=5;
