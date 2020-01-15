@@ -1,8 +1,8 @@
-Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, ManagerId int);
-Truncate table Employee;
-insert into Employee (Id, Name, Salary, ManagerId) values ('1', 'Joe', '70000', '3');
-insert into Employee (Id, Name, Salary, ManagerId) values ('2', 'Henry', '80000', '4');
-insert into Employee (Id, Name, Salary, ManagerId) values ('3', 'Sam', '60000', 'None');
-insert into Employee (Id, Name, Salary, ManagerId) values ('4', 'Max', '90000', 'None');
+CREATE TABLE IF NOT EXISTS employee (id INT, name VARCHAR(255), salary INT, managerId INT);
+TRUNCATE table employee;
+INSERT INTO employee (id, name, salary, managerId) VALUES ('1', 'Joe', '70000', '3');
+INSERT INTO employee (id, name, salary, managerId) VALUES ('2', 'Henry', '80000', '4');
+INSERT INTO employee (id, name, salary, managerId) VALUES ('3', 'Sam', '60000', 'None');
+INSERT INTO employee (id, name, salary, managerId) VALUES ('4', 'Max', '90000', 'None');
 
-SELECT employee.Name FROM employee WHERE ManagerId = 0 AND (SELECT max(Salary) FROM employee);
+SELECT employee.name FROM employee WHERE managerId = 0 AND (SELECT max(salary) FROM employee);

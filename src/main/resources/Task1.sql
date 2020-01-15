@@ -1,10 +1,10 @@
-Create table Person (PersonId int, FirstName varchar(255), LastName varchar(255));
-Create table Address (AddressId int, PersonId int, City varchar(255), State varchar(255));
-Truncate table Person;
-insert into Person (PersonId, LastName, FirstName) values ('1', 'Wang', 'Allen');
-Truncate table Address;
-insert into Address (AddressId, PersonId, City, State) values ('1', '2', 'New York City', 'New York');
+CREATE TABLE person (personid INT, firstName VARCHAR(255), lastName VARCHAR(255));
+CREATE TABLE adress (adressid INT, personid INT, city VARCHAR(255), state VARCHAR(255));
+TRUNCATE table person;
+INSERT INTO person (personid, lastName, firstName) VALUES ('1', 'Wang', 'Allen');
+TRUNCATE table adress;
+INSERT INTO adress (adressid, personid, city, state) VALUES ('1', '2', 'New York city', 'New York');
 
-SELECT Person.FirstName,Person.LastName,Address.City,Address.State
-FROM Person LEFT JOIN  Address ON Person.PersonId = Address.PersonId;
+SELECT person.firstName,person.lastName,adress.city,adress.state
+FROM person LEFT JOIN  adress ON person.personid = adress.personid;
 

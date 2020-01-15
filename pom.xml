@@ -4,9 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>Epam</groupId>
-    <artifactId>HT11</artifactId>
+    <groupid>Epam</groupid>
+    <artIFactid>HT11</artIFactid>
     <version>1.0-SNAPSHOT</version>
 
 
+    <dependencies>
+        <!-- https://mvnrepository.com/artIFact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupid>mysql</groupid>
+            <artIFactid>mysql-connector-java</artIFactid>
+            <version>8.0.15</version>
+        </dependency>
+
+    </dependencies>
 </project>

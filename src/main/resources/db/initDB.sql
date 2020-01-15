@@ -1,19 +1,27 @@
-CREATE TABLE Account (
-    Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Status VARCHAR(25) NOT NULL
+CREATE TABLE accounts (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    status VARCHAR(25) NOT NULL
 );
 
-CREATE TABLE Skill(
-    Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Name VARCHAR(25)
+CREATE TABLE skills(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(25) UNIQUE,
+
 );
 
-CREATE TABLE Developer(
-    Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    FirstName VARCHAR(25) NOT NULL ,
-    LastName VARCHAR(25) NOT NULL ,
-    Account_id INT,
-    Skill_id INT NOT NULL,
-    FOREIGN KEY (Account_id) REFERENCES account(Id),
-    FOREIGN KEY (Skill_id) REFERENCES Skill(Id)
+CREATE TABLE developers(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(25) NOT NULL ,
+    lastName VARCHAR(25) NOT NULL ,
+    accounts_id INT,
+    FOREIGN KEY (accounts_id) REFERENCES accounts(id),
 );
+
+CREATE TABLE developer_skills(
+    id NOT NULL PRIMARY KEY ,
+    developers_id INT NOT NULL,
+    skills_id INT NOT NULL,
+    FOREIGN KEY (developers_id) REFERENCES developers(id),
+    FOREIGN KEY (skills_id) REFERENCES skills(id)
+)
+
